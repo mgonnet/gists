@@ -1,3 +1,3 @@
-# Gists, snippets, algorithms, just for fun
+# Snippets & Algorithms
 
 ## [MatrixClosestNeighbor](MatrixClosestNeighbor)
