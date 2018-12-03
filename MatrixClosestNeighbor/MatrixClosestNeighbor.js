@@ -1,4 +1,4 @@
-var matrixClosestNeighbor = function (x, y, neighbors) {
+let matrixClosestNeighbor = function (x, y, neighbors) {
   let matrix = Array(x).fill().map(() => Array(y).fill(-1))
   let q = [...neighbors]
   while (q.length > 0) {
@@ -26,11 +26,7 @@ var matrixClosestNeighbor = function (x, y, neighbors) {
   return matrix
 }
 
-let matrixClosesNeighborExecTime = function (x, y, neighbors) {
-  console.time()
-  let result = matrixClosestNeighbor(x, y, neighbors)
-  console.timeEnd()
-  return result
+onmessage = (message) => {
+  let result = matrixClosestNeighbor(message.data.x, message.data.y, message.daya.interestPoints)
+  postMessage(result)
 }
-
-matrixClosesNeighborExecTime(2048, 2048, [{ x: 1, y: 1 }, { x: 1322, y: 459 }])
