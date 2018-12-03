@@ -27,6 +27,6 @@ let matrixClosestNeighbor = function (x, y, neighbors) {
 }
 
 onmessage = (message) => {
-  let result = matrixClosestNeighbor(message.data.x, message.data.y, message.daya.interestPoints)
+  let result = matrixClosestNeighbor(message.data.x, message.data.y, message.data.interestPoints)
   postMessage(result)
 }
