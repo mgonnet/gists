@@ -16,11 +16,13 @@ worker.addEventListener('message', promptResponse, false)
 
 let onclick = (event) => {
 	let target = event.target
-	let y = target.cellIndex
-	let x = target.parentElement.rowIndex
-	console.log(x,y)
-	interestPoints.push({x: x, y: y})
-	worker.postMessage({ x: 100, y: 100, interestPoints: interestPoints })
+	if(target.nodeName==="TD"){
+		let y = target.cellIndex
+		let x = target.parentElement.rowIndex
+		console.log(x,y)
+		interestPoints.push({x: x, y: y})
+		worker.postMessage({ x: 100, y: 100, interestPoints: interestPoints })
+	}
 }
 
 document.querySelector('body').addEventListener('click', onclick)
