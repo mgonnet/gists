@@ -1,12 +1,30 @@
 let worker = new Worker('./MatrixClosestNeighbor.js')
 
+let interestPoints = []
+
 let promptResponse = (message) => {
   let div = document.createElement('div')
   div.innerHTML=message.data
-  console.log(message.data)
-  document.querySelector('body').appendChild(div)
+  let body = document.querySelector('body')
+  while (body.firstChild) {
+	body.removeChild(body.firstChild).remove()
+  }
+  body.appendChild(div)
 }
 
 worker.addEventListener('message', promptResponse, false)
 
-worker.postMessage({ x: 100, y: 100, interestPoints: [{ x: 1, y: 1 }, { x: 50, y: 50 }] })
+let onclick = (event) => {
+	let target = event.target
+	let y = target.cellIndex
+	let x = target.parentElement.rowIndex
+	console.log(x,y)
+	interestPoints.push({x: x, y: y})
+	worker.postMessage({ x: 100, y: 100, interestPoints: interestPoints })
+}
+
+document.querySelector('body').addEventListener('click', onclick)
+
+worker.postMessage({ x: 100, y: 100, interestPoints: interestPoints })
+
+

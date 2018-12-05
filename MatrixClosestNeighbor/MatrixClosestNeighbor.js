@@ -32,9 +32,9 @@ onmessage = (message) => {
     return previousRows + '<tr>' + currentRow.reduce((previousColumn,currentColumn) => {
         return previousColumn + '<td>' + currentColumn + '</td>' 
       },
-      '') + '<tr>'
+      '') + '</tr>'
   }, 
   '')
-  result = '<table>' + result + '<table>'
+  result = '<table>' + result + '</table>'
   postMessage(result)
 }
