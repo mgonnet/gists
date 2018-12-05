@@ -1,9 +1,12 @@
 let worker = new Worker('./MatrixClosestNeighbor.js')
 
 let promptResponse = (message) => {
-  console.table(message.data)
+  let div = document.createElement('div')
+  div.innerHTML=message.data
+  console.log(message.data)
+  document.querySelector('body').appendChild(div)
 }
 
 worker.addEventListener('message', promptResponse, false)
 
-worker.postMessage({ x: 2048, y: 2048, interestPoints: [{ x: 1, y: 1 }, { x: 1322, y: 459 }] })
+worker.postMessage({ x: 100, y: 100, interestPoints: [{ x: 1, y: 1 }, { x: 50, y: 50 }] })
