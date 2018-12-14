@@ -28,12 +28,12 @@ let matrixClosestNeighbor = function (x, y, neighbors) {
 
 onmessage = (message) => {
   let result = matrixClosestNeighbor(message.data.x, message.data.y, message.data.interestPoints)
-  result = result.reduce((previousRows,currentRow) => {
-    return previousRows + '<tr>' + currentRow.reduce((previousColumn,currentColumn) => {
-        return previousColumn + '<td>' + currentColumn + '</td>' 
-      },
-      '') + '</tr>'
-  }, 
+  result = result.reduce((previousRows, currentRow) => {
+    return previousRows + '<tr>' + currentRow.reduce((previousColumn, currentColumn) => {
+      return previousColumn + '<td>' + currentColumn + '</td>'
+    },
+    '') + '</tr>'
+  },
   '')
   result = '<table>' + result + '</table>'
   postMessage(result)
