@@ -9,8 +9,8 @@ let fibogenerator = function* (){
 
     while(true){
         fibo_i = fibo_i_2 + fibo_i_1
-        fibo_i_1 = fibo_i
         fibo_i_2 = fibo_i_1
+        fibo_i_1 = fibo_i        
 
         yield fibo_i
     }
