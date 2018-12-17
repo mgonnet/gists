@@ -1,6 +1,6 @@
 let fibogenerator = function* (){
-    let fibo_i_1 = 1
-    let fibo_i_2 = 0
+    let fibo_i_1 = 1n
+    let fibo_i_2 = 0n
 
     let fibo_i
 
