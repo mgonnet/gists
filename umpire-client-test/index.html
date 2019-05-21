@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+  <div id=fibo></div>
+  <div>
+    <p>User Name:  <input id=userName type="text"></p>
+    <p>Lobby Name:  <input id=lobbyName type="text"></p>
+    <button id=Create onclick="create()">Create</button>
+    <button id=Join onclick="join()">Join</button>
+    <button id=Start onclick="start()">Start</button>
+    <p id=result></p>
+  </div>
+
+<body>
+
+<script src="client.js"></script>
+
+<style>
+html{
+  height: 100%;
+  position: relative;
+  overflow: hidden
+}
+
+#fibo{
+  top:50%;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  color:azure;
+}
+</style>
